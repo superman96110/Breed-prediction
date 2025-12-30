@@ -1,0 +1,16 @@
+#需要准备fst挑选的50k的snp位点信息，为两列，一列为chr，一列为position
+#准备all snp的位点信息，从raw vcf中提取命令如下，为两列，一列为chr，一列为position
+bcftools query -f '%CHROM\t%POS\n' /mnt/vdb/vdb/68/sheep/gtex/common_snp/filter_maf005_missing09_sheep_merged_WGS_RNA_common.recode.vcf  > all_snp.txt
+
+#准备eQTL的原始数据，数据格式为
+(bioenv) [root@localhost enrichment]# head eqtl.finemapped.credible
+tissue  pheno_id        SNP     cs      PIP     CHR     POS     REF     ALT     MAF     BETA    SE      Z       N
+Abomasum        ADPRS   1_10995282      L1      0.0264941479615046      chr1    10995282        A       T       0.09210526      0.7148216       0.06863772      10.4144 228
+Abomasum        ADPRS   1_10995856      L1      0.0264941479615046      chr1    10995856        G       A       0.09210526      0.7148216       0.06863772      10.4144 228
+Abomasum        ADPRS   1_10997619      L1      0.0265905543971623      chr1    10997619        T       C       0.09210526      0.7023272       0.067602605     10.3891 228
+Abomasum        ADPRS   1_10999302      L1      0.0871291774369762      chr1    10999302        G       A       0.08991228      0.7249634       0.06807952      10.6488 228
+Abomasum        ADPRS   1_10999442      L1      0.0871291774369762      chr1    10999442        G       T       0.08991228      0.7249634       0.06807952      10.6488 228
+Abomasum        ADPRS   1_10999444      L1      0.0871291774369762      chr1    10999444        G       A       0.08991228      0.7249634       0.06807952      10.6488 228
+Abomasum        ADPRS   1_10999679      L1      0.0871291774369762      chr1    10999679        G       T       0.08991228      0.7249634       0.06807952      10.6488 228
+Abomasum        ADPRS   1_11000253      L1      0.0871291774369762      chr1    11000253        G       A       0.08991228      0.7249634       0.06807952      10.6488 228
+Abomasum        ADPRS   1_11006448      L1      0.0871291774369762      chr1    11006448        C       T       0.08991228      0.7249634       0.06807952      10.6488 228
