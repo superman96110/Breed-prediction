@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding:utf-8 -*-
+# python GBC.py --raw unknow_BGD.raw --F F_matrix.tsv --out GBC_results_stream.tsv --threshold 0.02 --workers 16 --chunksize 50
 
 import sys
 import time
